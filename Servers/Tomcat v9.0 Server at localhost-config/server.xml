@@ -160,7 +160,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="BT_Servlet" path="/BT_Servlet" reloadable="true" source="org.eclipse.jst.jee.server:BT_Servlet"/><Context docBase="BT_JSP" path="/BT_JSP" reloadable="true" source="org.eclipse.jst.jee.server:BT_JSP"/></Host>
+      <Context docBase="BT_2_7" path="/BT_JSP" reloadable="true" source="org.eclipse.jst.jee.server:BT_2_7"/><Context docBase="BT_2_8" path="/BT_2_8" reloadable="true" source="org.eclipse.jst.jee.server:BT_2_8"/><Context docBase="BT_2_11" path="/BT_2_11" reloadable="true" source="org.eclipse.jst.jee.server:BT_2_11"/><Context docBase="BT_2_12" path="/BT_2_12" reloadable="true" source="org.eclipse.jst.jee.server:BT_2_12"/><Context docBase="BT_2_13" path="/BT_2_13" reloadable="true" source="org.eclipse.jst.jee.server:BT_2_13"/><Context docBase="BT_2_14" path="/BT_2_14" reloadable="true" source="org.eclipse.jst.jee.server:BT_2_14"/><Context docBase="BT_2_15" path="/BT_2_15" reloadable="true" source="org.eclipse.jst.jee.server:BT_2_15"/><Context docBase="BT_3_11" path="/BT_3_11" reloadable="true" source="org.eclipse.jst.jee.server:BT_3_11"/></Host>
     </Engine>
   </Service>
 </Server>
