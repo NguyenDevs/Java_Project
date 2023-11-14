@@ -1,0 +1,57 @@
+Sơ đồ hoạt động của JDBC (Java Database Connectivity) mô tả quy trình cơ bản để kết nối Java application với cơ sở dữ liệu. Dưới đây là một sơ đồ cơ bản:
+
+1. Kết Nối Database:
+   - **Bước 1: Import các gói JDBC cần thiết (ví dụ: java.sql).
+   - **Bước 2: Đăng ký JDBC Driver sử dụng Class.forName("driverClassName") hoặc DriverManager.registerDriver(new DriverClass()).
+   - **Bước 3: Tạo kết nối đến cơ sở dữ liệu bằng cách sử dụng DriverManager.getConnection(url, username, password).
+
+2. Thực Hiện Câu Lệnh SQL:
+   - **Bước 4: Tạo một đối tượng Statement từ kết nối (connection.createStatement()).
+   - **Bước 5: Thực hiện các câu lệnh SQL bằng executeQuery() cho SELECT hoặc executeUpdate() cho INSERT, UPDATE, DELETE.
+
+3. Xử Lý Kết Quả:
+   - **Bước 6: Đối với SELECT, nhận ResultSet từ câu lệnh thực thi.
+   - **Bước 7: Lặp qua kết quả nếu có và xử lý dữ liệu.
+
+4. Đóng Kết Nối:
+   - **Bước 8: Đóng ResultSet, Statement, và Connection để giải phóng tài nguyên và ngăn chặn rò rỉ bộ nhớ.
+
+Dưới đây là sơ đồ chi tiết:
+
++-------------------------+
+| Import JDBC Packages    |
++-------------------------+
+            |
+            v
++-------------------------+
+| Register JDBC Driver    |
++-------------------------+
+            |
+            v
++-------------------------+
+| Establish Connection    |
++-------------------------+
+            |
+            v
++-------------------------+
+| Create Statement        |
++-------------------------+
+            |
+            v
++-------------------------+
+| Execute SQL Query       |
++-------------------------+
+            |
+            v
++-------------------------+
+| Process ResultSet       |
++-------------------------+
+            |
+            v
++-------------------------+
+| Close ResultSet,        |
+| Statement, and          |
+| Connection              |
++-------------------------+
+
+Lưu ý rằng các bước này có thể thay đổi tùy thuộc vào yêu cầu cụ thể của ứng dụng và loại câu lệnh SQL được thực thi.

@@ -1,0 +1,39 @@
+Java Database Connectivity (JDBC):
+
+1. Khái Niệm:
+JDBC (Java Database Connectivity) là một API (Application Programming Interface) của Java,
+được sử dụng để kết nối và tương tác với cơ sở dữ liệu từ các ứng dụng Java. 
+JDBC cung cấp một cách tiêu chuẩn để thiết lập kết nối với các hệ quản trị cơ sở dữ liệu (DBMS) 
+và thực hiện các thao tác như truy vấn SQL.
+
+2. Gói Thư Viện và Hàm Truy Xuất Cơ Sở Dữ Liệu:
+Gói thư viện chính của JDBC bao gồm các gói sau đây:
+- java.sql: Cung cấp các lớp và giao diện để tương tác với cơ sở dữ liệu.
+- javax.sql: Bổ sung thêm chức năng cho java.sql.
+
+Các hàm truy xuất cơ sở dữ liệu quan trọng trong JDBC bao gồm:
+- DriverManager: Quản lý các driver để thiết lập kết nối với cơ sở dữ liệu.
+- Connection: Đại diện cho một kết nối với cơ sở dữ liệu.
+- Statement: Được sử dụng để thực thi các câu lệnh SQL.
+- ResultSet: Lưu trữ kết quả của một truy vấn SQL.
+- PreparedStatement: Một loại Statement được biên dịch trước, giúp tăng hiệu suất và bảo mật.
+
+3. Thành Phần của Một JDBC Driver:
+JDBC Driver là một thành phần quan trọng để kết nối Java với cơ sở dữ liệu. Có 4 loại JDBC Drivers:
+
+- JDBC-ODBC Bridge Driver: Sử dụng ODBC (Open Database Connectivity) để kết nối với cơ sở dữ liệu. 
+Đây không phải là một lựa chọn phổ biến ngày nay vì sự phổ cập giảm dần của ODBC.
+
+- Native-API Driver (Thin Driver): Sử dụng giao diện cơ sở dữ liệu cụ thể của từng hệ quản trị cơ sở dữ liệu. 
+Được viết bằng Java và không yêu cầu một phần mềm trung gian.
+
+- Network Protocol Driver (Middleware Driver): Sử dụng một tầng trung gian để kết nối với cơ sở dữ liệu thông qua mạng. 
+Phổ biến trong môi trường mạng lớn.
+
+- Thin Driver: Một phiên bản nhẹ của Network Protocol Driver, giảm sự phụ thuộc vào phần mềm trung gian.
+
+Mỗi JDBC Driver bao gồm ít nhất hai phần chính:
+- DriverManager: Quản lý danh sách các driver được đăng ký.
+- JDBC Driver: Thực hiện các phương thức để thiết lập kết nối và tương tác với cơ sở dữ liệu.
+
+Việc lựa chọn Driver phụ thuộc vào loại cơ sở dữ liệu và yêu cầu cụ thể của ứng dụng.

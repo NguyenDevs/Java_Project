@@ -1,0 +1,66 @@
+Servlet và JSP (JavaServer Pages) là hai công nghệ quan trọng trong phát triển web Java EE (Enterprise Edition). Dưới đây là một so sánh giữa Servlet và JSP cùng với một ví dụ minh họa.
+
+### Servlet:
+
+1. Mô tả:
+   - Là một module Java chạy trên máy chủ web hoặc máy chủ ứng dụng.
+   - Viết bằng Java và thường được sử dụng để xử lý logic ứng dụng, nhận và xử lý các yêu cầu từ trình duyệt web.
+
+2. Cú pháp:
+   - Mã Java được nhúng trong phương thức doGet hoặc doPost của lớp Servlet.
+   - HTML thường được sinh ra bằng cách sử dụng các phương thức println() hoặc gửi đối tượng
+PrintWriter.
+
+3. Thích hợp cho:
+   - Xử lý logic nghiệp vụ, truy xuất cơ sở dữ liệu.
+   - Thường phải duyệt qua mã Java để chỉnh sửa giao diện.
+
+### JSP:
+
+1. Mô tả:
+   - Là một công nghệ template dựa trên Java, tách biệt logic và giao diện người dùng.
+   - Sử dụng HTML hoặc XML để xây dựng trang web và nhúng mã Java bên trong.
+
+2. Cú pháp:
+   - Sử dụng thẻ <% %> để nhúng mã Java.
+   - Các thẻ JSP như <jsp:include>, <jsp:forward>, <jsp:useBean> cung cấp các tính năng đặc biệt.
+
+3. Thích hợp cho:
+   - Phát triển giao diện người dùng.
+   - Tách biệt logic và giao diện.
+
+### So sánh:
+
+1. Hiệu suất:
+   - Servlet thường nhanh hơn vì không có sự chuyển đổi từ mã nguồn Java thành HTML như trong JSP.
+   - JSP thích hợp cho các dự án với sự tách biệt giữa người phát triển giao diện và lập trình viên Java.
+
+2. Đọc/Ghi Code:
+   - Servlet thích hợp cho những người làm việc với logic nghiệp vụ và thích làm việc trực tiếp với mã nguồn Java.
+   - JSP thích hợp cho những người làm việc với giao diện người dùng và muốn tách biệt mã Java và HTML.
+
+### Ví dụ:
+
+#### Servlet:
+
+@WebServlet("/HelloServlet")
+public class HelloServlet extends HttpServlet {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("<html><body>");
+        out.println("<h2>Hello Servlet</h2>");
+        out.println("</body></html>");
+    }
+}
+
+
+#### JSP:
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+    <body>
+        <h2>Hello JSP</h2>
+    </body>
+</html>
+

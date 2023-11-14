@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class main {
 
     // Thay đổi thông tin kết nối tới cơ sở dữ liệu của bạn
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/qlsv";
+    private static final String DB_URL = "jdbc:mysql://localhost:3307/qlsv";
     private static final String USER = "root";
     private static final String PASSWORD = "";
 

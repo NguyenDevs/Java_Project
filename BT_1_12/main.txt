@@ -1,0 +1,60 @@
+Một chu trình sống của Servlet bao gồm các phương thức chính được gọi tại các giai đoạn khác nhau của vòng đời Servlet. Dưới đây là các phương thức chính của Servlet và mô tả ngắn:
+
+1. init():
+   - Gọi một lần khi Servlet được tạo.
+   - Thích hợp để khởi tạo tài nguyên hoặc thiết lập môi trường.
+
+2. service():
+   - Gọi mỗi lần khi có yêu cầu đến Servlet.
+   - Xử lý yêu cầu và tạo phản hồi.
+
+3. doGet() và doPost():
+   - Các phương thức con của service() dùng để xử lý yêu cầu HTTP GET và POST tương ứng.
+
+4. destroy():
+   - Gọi một lần khi Servlet sắp bị hủy bỏ.
+   - Thích hợp để giải phóng tài nguyên hoặc lưu trữ dữ liệu trạng thái cuối cùng.
+
+Dưới đây là một ví dụ đơn giản về cách xây dựng một Servlet sinh ra HTML và hiển thị lời chào "Hi Everyone!":
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/GreetServlet")
+public class GreetServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    public GreetServlet() {
+        super();
+    }
+
+    public void init() throws ServletException {
+        // Phương thức init() được gọi khi Servlet được khởi tạo
+        System.out.println("Servlet initialized");
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // Phương thức doGet() được gọi khi có yêu cầu HTTP GET
+        response.setContentType("text/html");
+
+        PrintWriter out = response.getWriter();
+        out.println("<html>");
+        out.println("<head><title>GreetServlet</title></head>");
+        out.println("<body>");
+        out.println("<h1>Hi Everyone!</h1>");
+        out.println("</body>");
+        out.println("</html>");
+    }
+
+    public void destroy() {
+        // Phương thức destroy() được gọi khi Servlet sắp bị hủy bỏ
+        System.out.println("Servlet destroyed");
+    }
+}

@@ -1,0 +1,48 @@
+Trong Java, để thao tác với cơ sở dữ liệu,
+chúng ta thường sử dụng JDBC (Java Database Connectivity).
+JDBC cung cấp một bộ API để kết nối và thao tác với cơ sở dữ liệu từ chương trình Java. 
+Dưới đây là một số lớp cơ bản được sử dụng trong JDBC:
+
+1. DriverManager:
+   - Tác dụng: Quản lý các đối tượng kết nối đến cơ sở dữ liệu.
+   - Cú pháp khởi tạo: Không cần khởi tạo vì DriverManager sử dụng phương thức tĩnh.
+
+    Connection connection = DriverManager.getConnection(url, user, password);
+    
+
+2. Connection:
+   - Tác dụng: Đại diện cho một kết nối đến cơ sở dữ liệu.
+   - Cú pháp khởi tạo: Sử dụng DriverManager để lấy kết nối.
+
+    Connection connection = DriverManager.getConnection(url, user, password);
+    
+
+3. Statement:
+   - Tác dụng: Thực hiện các câu lệnh SQL đến cơ sở dữ liệu.
+   - Cú pháp khởi tạo: Có hai loại: `Statement` để thực hiện các câu lệnh đơn giản và `PreparedStatement` để thực hiện các câu lệnh được tạo trước.
+
+    Statement statement = connection.createStatement();
+    PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+
+
+4. ResultSet:
+   - Tác dụng: Lưu trữ kết quả của một truy vấn SQL.
+   - Cú pháp khởi tạo: ResultSet được trả về bởi phương thức `executeQuery` của đối tượng `Statement`.
+
+    ResultSet resultSet = statement.executeQuery(sqlQuery);
+
+
+5. PreparedStatement:
+   - Tác dụng: Sử dụng để thực hiện các câu lệnh SQL với tham số.
+   - Cú pháp khởi tạo: Sử dụng phương thức `prepareStatement` của đối tượng `Connection`.
+
+    PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+
+
+6. CallableStatement:
+   - Tác dụng: Cho phép gọi các thủ tục lưu trữ trong cơ sở dữ liệu.
+   - Cú pháp khởi tạo: Sử dụng phương thức `prepareCall` của đối tượng `Connection`.
+
+    CallableStatement callableStatement = connection.prepareCall(sqlQuery);
+
+Lưu ý: Trong cú pháp khởi tạo, `url`, `user`, `password`, và `sqlQuery` là các thông số cần thiết tùy thuộc vào loại cơ sở dữ liệu bạn đang sử dụng và mục đích sử dụng cụ thể.

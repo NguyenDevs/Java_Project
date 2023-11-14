@@ -1,0 +1,39 @@
+Cấu trúc của một JDBC URL (Uniform Resource Locator) chứa thông tin quan trọng để thiết lập kết nối với cơ sở dữ liệu.
+Dưới đây là cấu trúc chung của một JDBC URL và phân tích các thành phần:
+
+jdbc:subprotocol://host:port/databaseName?property1=value1&property2=value2...
+
+
+- jdbc: Chỉ ra rằng đây là một URL JDBC.
+- subprotocol: Xác định loại cơ sở dữ liệu mà chúng ta đang kết nối. Đối với MySQL, đây có thể là `mysql`, và đối với SQL Server, có thể là `sqlserver`.
+- host: Địa chỉ hoặc tên máy chủ cơ sở dữ liệu.
+- port: Cổng mà cơ sở dữ liệu đang lắng nghe. Mặc định là cổng của hệ quản trị cơ sở dữ liệu (ví dụ, 3306 cho MySQL).
+- databaseName: Tên của cơ sở dữ liệu mà chúng ta muốn kết nối.
+- property1=value1&property2=value2...: Các thuộc tính có thể được thêm vào để cấu hình kết nối,
+như tên đăng nhập, mật khẩu, và các thuộc tính khác tùy thuộc vào loại cơ sở dữ liệu và driver sử dụng.
+
+Ví dụ với MySQL:
+
+jdbc:mysql://localhost:3306/mydatabase?user=myuser&password=mypassword
+
+
+- subprotocol: mysql
+- host: localhost
+- port: 3306
+- databaseName: mydatabase
+- property1: user=myuser
+- property2: password=mypassword
+
+Ví dụ với SQL Server:
+
+jdbc:sqlserver://localhost:1433;databaseName=mydatabase;user=myuser;password=mypassword;
+
+
+- subprotocol: sqlserver
+- host: localhost
+- port: 1433
+- databaseName: mydatabase
+- property1: user=myuser
+- property2: password=mypassword
+
+Lưu ý rằng mỗi loại cơ sở dữ liệu có thể có các thuộc tính khác nhau. Sử dụng JDBC URL phù hợp với loại cơ sở dữ liệu bạn đang sử dụng và cung cấp các giá trị phù hợp với cấu trúc URL của từng hệ thống.

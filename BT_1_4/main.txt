@@ -1,0 +1,64 @@
+Truy xuất cơ sở dữ liệu với Java thường bao gồm nhiều bước. Dưới đây là một hướng dẫn chi tiết về các bước cơ bản:
+
+1. Import Các Gói JDBC:
+   - Import các gói JDBC cần thiết trong chương trình Java. Các gói chính bao gồm `java.sql` để làm việc với JDBC và `javax.sql` cho một số chức năng bổ sung.
+
+   import java.sql.Connection;
+   import java.sql.DriverManager;
+   import java.sql.PreparedStatement;
+   import java.sql.ResultSet;
+   import java.sql.SQLException;
+
+
+2. Thiết Lập Kết Nối với Cơ Sở Dữ Liệu:
+   - Sử dụng DriverManager.getConnection() để thiết lập kết nối với cơ sở dữ liệu. 
+   Cung cấp URL của cơ sở dữ liệu, tên đăng nhập và mật khẩu.
+
+   String jdbcUrl = "jdbc:mysql://localhost:3306/ten_csdls";
+   String username = "ten_nguoi_dung";
+   String password = "mat_khau";
+
+   Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
+
+
+3. Tạo và Thực Thi Câu Lệnh SQL:
+   - Sử dụng Connection.createStatement() để tạo đối tượng Statement hoặc 
+   Connection.prepareStatement() để tạo PreparedStatement. Sau đó, sử dụng executeQuery() 
+   để thực thi câu lệnh SQL.
+
+   String sqlQuery = "SELECT * FROM ten_bang";
+   Statement statement = connection.createStatement();
+   ResultSet resultSet = statement.executeQuery(sqlQuery);
+
+4. Xử Lý Kết Quả:
+   - Duyệt qua kết quả nếu có, sử dụng các phương thức ResultSet
+    để truy cập dữ liệu từ các cột.
+
+   while (resultSet.next()) {
+       // Xử lý dữ liệu từ ResultSet
+       String columnName = resultSet.getString("ten_cot");
+       // Thực hiện các thao tác khác
+   }
+   
+
+5. Đóng Tài Nguyên:
+   - Đảm bảo đóng tất cả các tài nguyên sau khi đã sử dụng xong để tránh rò rỉ tài nguyên.
+
+   resultSet.close();
+   statement.close();
+   connection.close();
+   
+
+6. Xử Lý Ngoại Lệ:
+   - Bắt và xử lý các ngoại lệ (SQLException) có thể xảy ra trong quá trình thao tác 
+   với cơ sở dữ liệu.
+
+   try {
+       // Các bước truy xuất cơ sở dữ liệu
+   } catch (SQLException e) {
+       e.printStackTrace();
+   }
+   
+
+Đối với các thao tác như INSERT, UPDATE, DELETE, bạn sẽ sử dụng `executeUpdate()` thay vì `executeQuery()`.
+Đồng thời, với các truy vấn có tham số, sử dụng `PreparedStatement` để tránh các vấn đề an toàn và hiệu suất.
