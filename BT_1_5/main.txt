@@ -35,5 +35,3 @@ jdbc:sqlserver://localhost:1433;databaseName=mydatabase;user=myuser;password=myp
 - databaseName: mydatabase
 - property1: user=myuser
 - property2: password=mypassword
-
-Lưu ý rằng mỗi loại cơ sở dữ liệu có thể có các thuộc tính khác nhau. Sử dụng JDBC URL phù hợp với loại cơ sở dữ liệu bạn đang sử dụng và cung cấp các giá trị phù hợp với cấu trúc URL của từng hệ thống.

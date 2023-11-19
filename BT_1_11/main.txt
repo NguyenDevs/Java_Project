@@ -1,0 +1,29 @@
+### Servlet là gì?
+
+Servlet là một thành phần Java được sử dụng để xây dựng ứng dụng web.
+ Nó xử lý yêu cầu từ client, tạo phản hồi, và có thể thực hiện nhiều nhiệm vụ 
+ như tương tác cơ sở dữ liệu và quản lý trạng thái ứng dụng.
+
+### Ưu Điểm:
+
+- Linh Hoạt và Mạnh Mẽ: Xử lý đa dạng nhiệm vụ trong ứng dụng web.
+  
+- Đa Nhiệm và Đa Luồng: Xử lý nhiều yêu cầu cùng lúc, tối ưu hiệu suất.
+
+- Bảo Mật và Tích Hợp Dễ Dàng: Hỗ trợ bảo mật và tích hợp với các công nghệ khác của Java EE.
+
+### Nhược Điểm:
+
+- Khả Năng Quản Lý Mã Nguồn Khó Khăn: Phức tạp khi quản lý mã Java và HTML trong cùng một tệp.
+
+- Khả Năng Phức Tạp và Hạn Chế Trong Template: Xử lý phức tạp đôi khi và hạn chế trong quản lý template hiện đại.
+
+### Môi Trường Thực Hiện Servlet:
+
+- Web Server hoặc Servlet Container: Chạy và quản lý vòng đời của Servlet.
+  
+- Java Development Kit (JDK): Để biên dịch và chạy mã nguồn Java của Servlet.
+
+- Ứng Dụng Web và Cấu Hình Servlet: Đóng gói trong ứng dụng web, tuân theo chuẩn của Java EE.
+
+- Máy Chủ và Hệ Điều Hành: Nơi triển khai và chạy Servlet.

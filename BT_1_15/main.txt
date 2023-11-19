@@ -1,0 +1,45 @@
+Kiến Trúc của Servlet:
+
+Servlet là một thành phần của Java EE (Java Platform, Enterprise Edition) được sử dụng để xây dựng ứng dụng web. 
+Kiến trúc của servlet bao gồm các phần chính sau:
+
+1. Client:
+   - Là người sử dụng cuối cùng, thường là trình duyệt web, gửi yêu cầu HTTP đến máy chủ.
+
+2. Web Server:
+   - Nhận yêu cầu từ client và chuyển nó đến container servlet.
+   - Cung cấp môi trường thực thi cho servlet.
+
+3. Servlet Container (Web Container hoặc Servlet Engine):
+   - Là một phần của web server, quản lý vòng đời của servlet và cung cấp các dịch vụ cần thiết.
+   - Chịu trách nhiệm về việc tạo ra các luồng thực thi và quản lý vòng đời của servlet.
+   - Đảm bảo nhiều luồng có thể xử lý các yêu cầu từ nhiều client cùng một lúc.
+
+4. Servlet:
+   - Là một thành phần Java chịu trách nhiệm xử lý yêu cầu và phản hồi của client.
+   - Có thể sinh ra động trên máy chủ và tự động được hủy sau khi xử lý yêu cầu.
+
+Nhiệm Vụ của Servlet:
+
+1. Xử lý Yêu Cầu (Request Handling):
+   - Servlet được sử dụng để xử lý yêu cầu từ client, thường là các yêu cầu HTTP.
+   - Có thể đọc thông tin từ yêu cầu (ví dụ: tham số, tiêu đề), xử lý dữ liệu, và tạo ra phản hồi.
+
+2. Tương Tác với Môi Trường (Environment Interaction):
+   - Servlet có thể tương tác với môi trường chạy của nó, bao gồm việc đọc thông tin cấu hình từ tệp web.xml, quản lý các phiên làm việc (session), và gửi thông tin đến log server.
+
+3. Tạo Ra Phản Hồi (Response Generation):
+   - Servlet có khả năng tạo ra phản hồi dưới nhiều định dạng, chủ yếu là HTML, XML, hoặc dữ liệu văn bản.
+   - Có thể gửi phản hồi trực tiếp đến client hoặc thông qua web server.
+
+4. Quản Lý Trạng Thái (State Management):
+   - Servlet có thể quản lý trạng thái của ứng dụng, bao gồm cả trạng thái của phiên (session state) để theo dõi thông tin của client qua nhiều yêu cầu.
+
+5. Giao Tiếp với Cơ Sở Dữ Liệu (Database Communication):
+   - Servlet có thể tương tác với cơ sở dữ liệu để truy xuất hoặc cập nhật dữ liệu dựa trên yêu cầu của client.
+
+6. Chuyển Tiếp (Forwarding) và Điều Hướng (Redirection):
+   - Có khả năng chuyển tiếp yêu cầu tới một servlet khác hoặc một trang web khác, hoặc thậm chí có thể thay đổi địa chỉ URL của client.
+
+7. Bảo Mật (Security):
+   - Servlet có thể thực hiện các biện pháp bảo mật như xác thực và ủy quyền để bảo vệ tài nguyên và thông tin của ứng dụng.

@@ -44,5 +44,3 @@ Dưới đây là một số lớp cơ bản được sử dụng trong JDBC:
    - Cú pháp khởi tạo: Sử dụng phương thức `prepareCall` của đối tượng `Connection`.
 
     CallableStatement callableStatement = connection.prepareCall(sqlQuery);
-
-Lưu ý: Trong cú pháp khởi tạo, `url`, `user`, `password`, và `sqlQuery` là các thông số cần thiết tùy thuộc vào loại cơ sở dữ liệu bạn đang sử dụng và mục đích sử dụng cụ thể.

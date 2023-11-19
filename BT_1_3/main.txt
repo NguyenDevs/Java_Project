@@ -53,5 +53,3 @@ Dưới đây là sơ đồ chi tiết:
 | Statement, and          |
 | Connection              |
 +-------------------------+
-
-Lưu ý rằng các bước này có thể thay đổi tùy thuộc vào yêu cầu cụ thể của ứng dụng và loại câu lệnh SQL được thực thi.

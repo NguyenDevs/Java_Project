@@ -1,0 +1,50 @@
+JSP là viết tắt của JavaServer Pages, là một công nghệ phát triển web trong ngôn ngữ lập trình Java.
+ JSP cho phép nhúng mã Java vào trong trang HTML, giúp tạo ra các trang web động. Dưới đây là mô tả về
+  vòng đời của JSP và các phương thức quan trọng liên quan.
+
+### Vòng Đời của JSP:
+
+1. Translate (Dịch):
+   - Khi một trang JSP được yêu cầu, trình biên dịch JSP chuyển đổi mã nguồn JSP thành servlet Java tương ứng.
+   - Mã servlet này chứa tất cả mã Java và HTML được tạo ra từ mã nguồn JSP.
+
+2. Compile (Biên dịch):
+   - Mã servlet được biên dịch thành bytecode, ch ready để thực thi trên máy ảo Java (JVM).
+
+3. Load (Nạp):
+   - Bytecode được nạp vào bộ nhớ và tạo ra một servlet instance để xử lý các yêu cầu từ client.
+
+4. Instantiate (Khởi tạo):
+   - Servlet instance được khởi tạo bởi container servlet khi có yêu cầu từ client.
+
+5. Service (Dịch vụ):
+   - Mỗi yêu cầu từ client sẽ được xử lý trong phương thức `service()` của servlet.
+   - Trong trường hợp JSP, phương thức `service()` được gọi sẽ chứa mã Java được tạo ra từ mã nguồn JSP.
+
+6. Destroy (Hủy):
+   - Khi servlet không còn được sử dụng nữa (thường là sau khi web ứng dụng được tắt), phương thức `destroy()` được gọi để giải phóng tài nguyên.
+
+### Các Phương Thức Trong Vòng Đời Của JSP:
+
+1. jspInit() (Khởi tạo JSP):
+   - Được gọi một lần duy nhất khi servlet được tạo ra.
+   - Thường được sử dụng để khởi tạo các tài nguyên như kết nối cơ sở dữ liệu.
+
+2. jspService() (Dịch vụ JSP):
+   - Chứa mã Java được tạo ra từ mã nguồn JSP.
+   - Được gọi cho mỗi yêu cầu từ client.
+
+3. jspDestroy() (Hủy JSP):
+   - Được gọi một lần duy nhất khi servlet bị hủy.
+   - Thường được sử dụng để giải phóng tài nguyên.
+
+### Tác Dụng Của Các Phương Thức:
+
+1. jspInit(): Khởi tạo các tài nguyên cần thiết cho JSP, như kết nối cơ sở dữ liệu.
+
+2. jspService(): Xử lý mỗi yêu cầu từ client bằng cách thực thi mã Java được tạo từ JSP.
+
+3. jspDestroy(): Giải phóng tài nguyên khi servlet không còn được sử dụng nữa.
+
+Vòng đời của JSP giúp quản lý việc tạo ra và duy trì trang web động, 
+đồng thời cung cấp các điểm mở rộng để thực hiện các tác vụ khác nhau trong quá trình chạy ứng dụng web.

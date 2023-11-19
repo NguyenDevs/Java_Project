@@ -59,6 +59,5 @@ Truy xuất cơ sở dữ liệu với Java thường bao gồm nhiều bước.
        e.printStackTrace();
    }
    
-
 Đối với các thao tác như INSERT, UPDATE, DELETE, bạn sẽ sử dụng `executeUpdate()` thay vì `executeQuery()`.
 Đồng thời, với các truy vấn có tham số, sử dụng `PreparedStatement` để tránh các vấn đề an toàn và hiệu suất.

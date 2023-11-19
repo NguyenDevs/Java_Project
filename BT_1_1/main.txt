@@ -35,5 +35,3 @@ Phổ biến trong môi trường mạng lớn.
 Mỗi JDBC Driver bao gồm ít nhất hai phần chính:
 - DriverManager: Quản lý danh sách các driver được đăng ký.
 - JDBC Driver: Thực hiện các phương thức để thiết lập kết nối và tương tác với cơ sở dữ liệu.
-
-Việc lựa chọn Driver phụ thuộc vào loại cơ sở dữ liệu và yêu cầu cụ thể của ứng dụng.
