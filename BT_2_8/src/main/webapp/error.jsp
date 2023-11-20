@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
 <link rel="icon" type="image/x-icon" href="vuted.png">
-
 </head>
 <body>
 
